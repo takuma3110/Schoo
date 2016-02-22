@@ -10,7 +10,7 @@
 <header class="header">
   <div class="header__bar row">
     <h1 class="grid-6"><a href="/">Schoo</a></h1>
-    <% user_signed_in? %>
+    <% if user_signed_in? %>
       <div class="user _nav grid-6">
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       </div>
