@@ -1,0 +1,34 @@
+
+  <div class="genre__bar row">
+  <%= form_tag('/curriculums/search',method: :get) do %>
+    <input class="search__query" name="keyword" placeholder="講義名で検索" type="text" value="">
+    <button class="btn-search" title="検索" type="submit"><i class="icon-search"></i><img class="button_image" src="assets/Search.png"></button></input>
+    <% end %>
+
+
+    <ul class="contents clearfix">
+      <% @genres.each do |genre| %>
+      <li><%= link_to "#{genre.genre_name}" ,genre_path(id: genre.id), class: 'genre'%> </li>
+      <% end %>
+     </ul>
+
+  </div>
+    <h3 class="newest">最新講座</h3>
+    <ul class="wrapper">
+    <% @curriculums.each do |curriculum| %>
+      <li class="curriculum_box">
+        <div class="image_box" >
+          <%= link_to image_tag(curriculum.image, :size => '245x150'), curriculum_path(curriculum) %>
+        </div>
+        <div class="date_box">
+          <p><%= curriculum.month %>月 <%= curriculum.day %>日</p>
+        </div>
+        <div class="name_box">
+          <%= curriculum.name %>
+        </div>
+        <div class="t_name_box">
+          <%= curriculum.t_name %>先生
+        </div>
+      </li>
+    <% end %>
+    </ul>

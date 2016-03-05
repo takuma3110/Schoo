@@ -6,9 +6,11 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:sign_up) << :teacher_flag
   end
 
-  def after_sign_up_path_for
-  end
+  # def after_sign_out_path_for(resource)
+  #   '/users/sign_in'
+  # end
 
 end

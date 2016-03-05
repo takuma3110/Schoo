@@ -1,0 +1,23 @@
+<div calss="search_wrapper">
+  <h3 class="newest"><%= @genre.genre_name %></h3>
+      <ul class="wrapper">
+      <% @curriculums.each do |curriculum| %>
+        <li class="curriculum_box">
+          <div class="image_box" >
+            <%= link_to image_tag(curriculum.image, :size => '245x150'), curriculum_path(curriculum) %>
+          </div>
+          <div class="date_box">
+            <%= curriculum.month %>月
+            <%= curriculum.day %>日
+
+          </div>
+          <div class="name_box">
+            <%= curriculum.name %>
+          </div>
+          <div class="t_name_box">
+            <%= curriculum.t_name %>
+          </div>
+        </li>
+      <% end %>
+      </ul>
+</div>

@@ -1,11 +1,13 @@
-<div class="contents row">
-    <h2>Sign up</h2>
+<div class="clearfix">
+  <div class="left_sign_up_box"></div>
+  <div class="sign_up_box">
+    <h2>新規登録</h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field">
         <%= f.label :name %><br />
-        <%= f.name_field :name %>
+        <%= f.text_field :name %>
       </div>
 
       <div class="field">
@@ -27,8 +29,16 @@
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 
+      <div class="radio_button">
+        <p>生徒or講師<br>
+        <%= f.radio_button 'teacher_flag','0',{} %>生徒
+        <%= f.radio_button 'teacher_flag','1',{:checked => true} %>講師
+      </p>
+    </div>
+
       <div class="actions">
         <%= f.submit "Sign up" %>
       </div>
     <% end %>
+  </div>
   </div>

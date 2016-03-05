@@ -5,14 +5,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+
 </head>
+
 <body>
 <header class="header">
   <div class="header__bar row">
-    <h1 class="grid-6"><a href="/">Schoo</a></h1>
+    <a href="/curriculums" class="schoo_logo" style='text-decoration: none;'>Schoo</a>
     <% if user_signed_in? %>
       <div class="user _nav grid-6">
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+           <a href="/users/<%= current_user.id %>">マイページ</a>
       </div>
     <% else %>
       <div class="grid-6">
@@ -22,7 +26,11 @@
     <% end %>
   </div>
 </header>
+
 <%= yield %>
 
+  <footer>
+    <%= link_to "TOP PAGE", "/", class: "footer" %>
+  </footer>
 </body>
 </html>

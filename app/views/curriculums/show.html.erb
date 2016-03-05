@@ -1,0 +1,27 @@
+
+    <div class="curriculum_show_wrapper">
+      <div class="show_pref_name_box">
+        <p class="show_pref_name">開講地: <%= @curriculum.pref_name %></p>
+      </div>
+      <div class="show_genre_box">
+        <p class="show_genre">ジャンル: <%= @curriculum.genre %></p>
+      </div>
+      <div class="show_name_box">
+        <h2 class="show_name"><%= @curriculum.name %></h2>
+      </div>
+      <div class="show_t_name_box">
+        <p class="show_t_name">講師: <%= @curriculum.t_name %>先生</p>
+      </div>
+      <div class="show_img_box">
+       <%= image_tag(@curriculum.image, :class=> 'show_img', :size => '1000x300') %>
+      </div>
+      <div class="show_date_box">
+        <p class="show_date">開講日: <%= @curriculum.month %>月 <%= @curriculum.day %>日</p>
+      </div>
+      <div class="show_fee_box">
+        <p class="show_fee">受講料: <%= @curriculum.fee %>円</p>
+      </div>
+      <div class="show_detail_box">
+        <p class="show_detail"><%= @curriculum.detail %></p>
+      </div>
+    </div>
